@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClimaTec - ViajaPerú</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>🌤️ ClimaTec - ViajaPerú</h1>
+
+    <form id="form-clima">
+      <input id="ciudad" placeholder="Escribe una ciudad (ej: Cusco)">
+      <button id="btn-buscar" type="submit">Buscar</button>
+    </form>
+    <p id="estado" aria-live="polite"></p>
+    <div id="resultado"></div>
+
+    <hr>
+    <h2>Medición: secuencial vs Promise.all</h2>
+    <button id="btn-medir" type="button">Medir Lima, Cusco y Arequipa (3 veces)</button>
+    <table>
+      <thead><tr><th>Intento</th><th>3 await en secuencia (ms)</th><th>Promise.all (ms)</th></tr></thead>
+      <tbody id="tabla-tiempos"></tbody>
+    </table>
+
+    <hr>
+    <h2>Promise.all vs Promise.allSettled (ciudad inválida)</h2>
+    <button id="btn-fallo" type="button">Probar con Lima, Valle de Dios  y Arequipa</button>
+    <pre id="salida-fallo"></pre>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

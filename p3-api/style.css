@@ -1,0 +1,13 @@
+body { font-family: Arial, sans-serif; background: #e8f1fb; margin: 0; }
+main { max-width: 680px; margin: 24px auto; padding: 16px; background: #fff; border-radius: 8px; }
+form { display: flex; gap: 8px; }
+input { flex: 1; padding: 8px; }
+button { padding: 8px 12px; cursor: pointer; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+#estado { font-weight: bold; min-height: 20px; }
+#estado.cargando { color: #8a6d00; }
+#estado.ok { color: #1b7f3b; }
+#estado.error { color: #b00020; }
+table { border-collapse: collapse; margin-top: 8px; width: 100%; }
+th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+pre { background: #f4f4f4; padding: 8px; white-space: pre-wrap; }
