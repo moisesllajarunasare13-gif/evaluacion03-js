@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba de seguridad XSS</title>
+  <style>body{font-family:Arial;margin:24px} li{margin:8px 0}</style>
+</head>
+<body>
+  
+  <h2>Prueba de seguridad: producto malicioso</h2>
+  <p>Texto probado: <code>&lt;img src=x onerror="alert(1)"&gt;</code></p>
+
+  <button id="btn-inseguro">ANTES: dibujar con innerHTML</button>
+  <button id="btn-seguro">DESPUÉS: dibujar con textContent</button>
+
+  <ul id="salida"></ul>
+
+  <script>
+    const malicioso = '<img src=x onerror="alert(1)">';
+    const salida = document.getElementById("salida");
+
+    document.getElementById("btn-inseguro").addEventListener("click", () => {
+      const li = document.createElement("li");
+      li.innerHTML = "Producto: " + malicioso; // PELIGRO: el navegador interpreta el HTML
+      salida.appendChild(li);
+    });
+
+    document.getElementById("btn-seguro").addEventListener("click", () => {
+      const li = document.createElement("li");
+      li.textContent = "Producto: " + malicioso; // SEGURO: se muestra como texto
+      salida.appendChild(li);
+    });
+  </script>
+</body>
+</html>

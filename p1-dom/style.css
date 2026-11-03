@@ -1,0 +1,13 @@
+body { font-family: Arial, sans-serif; background: #f5efe6; margin: 0; }
+main { max-width: 640px; margin: 24px auto; padding: 16px; background: #fff; border-radius: 8px; }
+form { display: flex; gap: 8px; flex-wrap: wrap; }
+input, select, button { padding: 8px; font-size: 14px; }
+button { cursor: pointer; }
+#mensaje { min-height: 20px; font-weight: bold; }
+#mensaje.error { color: #b00020; }
+#mensaje.ok { color: #1b7f3b; }
+ul { list-style: none; padding: 0; }
+li { display: flex; justify-content: space-between; align-items: center; gap: 8px;
+     padding: 8px; border-bottom: 1px solid #ddd; }
+li.entregado span { text-decoration: line-through; color: #777; }
+#total { font-size: 18px; font-weight: bold; }
