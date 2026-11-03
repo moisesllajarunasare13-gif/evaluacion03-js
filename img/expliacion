@@ -1,0 +1,45 @@
+EXPLICACION DE LAS CAPTURAS - EVALUACION 03
+
+PREGUNTA 1: DOM Y EVENTOS
+
+p1-funcionando.png
+La pagina con 3 pedidos agregados (Cafe, Jugo y Croissant). Cada pedido muestra su subtotal y abajo se ve el total a cobrar actualizado. Esto prueba que el formulario, la lista y el total funcionan.
+
+p1-validacion.png
+Mensaje de error en rojo cuando los datos estan mal (producto vacio, precio 0 o cantidad negativa). El error sale en el parrafo #mensaje, sin usar alert().
+
+p1-xss-antes.png
+ANTES (innerHTML): al dibujar el texto malicioso con innerHTML, el navegador lo convirtio en codigo y se ejecuto alert(1). Esto es un riesgo de seguridad llamado XSS.
+
+p1-xss-despues.png
+DESPUES (textContent): con textContent el mismo texto se muestra como letras normales y no se ejecuta nada. Por eso elegi textContent y createElement.
+
+
+PREGUNTA 2: ES6 Y MODULOS
+
+p2-error-file.png
+Al abrir index.html,- la consola muestra un error de CORS.  . Se soluciona abriendo la pagina con Live Server.
+
+p2-live-server.png
+Con Live Server la pagina carga los modulos sin errores y la consola muestra "Total correcto con IGV: 23.6". El codigo antiguo daba 28.91. El nuevo corrige el error usando ?? en vez de ||, porque || trata el 0 como vacio y ?? no.
+
+
+PREGUNTA 3: FETCH Y ASYNC/AWAIT
+
+p3-cargando.png
+Estado "Cargando..." mientras se esperan los datos de la API. El boton Buscar esta deshabilitado para evitar pedidos repetidos.
+
+p3-exito.png
+Resultado correcto al buscar Cusco. Se muestran ciudad, region, temperatura y velocidad del viento, obtenidos con dos llamadas encadenadas (geocodificacion y clima).
+
+p3-no-encontrada.png
+Al buscar "Xyzabc" la API no devuelve resultados y la pagina muestra un mensaje claro: "No se encontro la ciudad".
+
+p3-offline.png
+Con el modo Offline de las DevTools, fetch falla y la pagina muestra "Sin conexion". El error se captura con try/catch.
+
+p3-tiempos.png
+Tiempos medidos con performance.now() para Lima, Cusco y Arequipa, tres veces cada forma. Promise.all fue mas rapido porque hace las tres peticiones al mismo tiempo.
+
+p3-allsettled.png
+Prueba con Lima, Xyzabc (invalida) y Arequipa. Promise.all falla por completo, mientras que Promise.allSettled muestra el resultado de cada ciudad, buena o mala.
